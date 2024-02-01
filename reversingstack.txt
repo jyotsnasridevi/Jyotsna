@@ -1,0 +1,55 @@
+Reverse a string using stack 4
+
+Write a program to reverse the given string using stack.
+
+Input Format
+
+Read a string
+
+Constraints
+
+string
+
+Output Format
+
+Reverse string using stack
+
+Sample Input 0
+
+python
+Sample Output 0
+
+nohtyp
+
+
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            return None
+
+def reverse_string(input_string):
+    stack = Stack()
+    for char in input_string:
+        stack.push(char)
+
+    reversed_string = ""
+    while not stack.is_empty():
+        reversed_string += stack.pop()
+
+    return reversed_string
+input_string = input()
+result = reverse_string(input_string)
+print(result)
